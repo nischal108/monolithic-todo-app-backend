@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Task</title>
+    <style>
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-900 text-gray-200">
+    <div class="container mx-auto py-8">
+        <div class="max-w-md mx-auto relative">
+            <h1 class="text-3xl font-bold mb-4">Edit Task</h1>
+            <form action="/update/<%= filename %>" method="post" >
+                <!-- Close button -->
+                <a href="/" class="close-btn text-gray-400 hover:text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </a>
+                <div class="mb-4">
+                    <label for="details" class="block text-sm font-medium text-gray-400">Task Details</label>
+                    <textarea id="details" name="details" placeholder="Write your updated task details here..."
+                        class="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500 bg-gray-700 text-gray-200 h-32 resize-none"> <%= taskDetails ? taskDetails : "" %></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full py-2 px-4 bg-blue-500 text-white rounded-md font-semibold hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Update
+                    Task</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

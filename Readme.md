@@ -2,6 +2,8 @@
 
 This is a simple web application for managing tasks. Users can create, view, update, and delete tasks through the user interface.
 
+## Demo
+You can check demo video inside the (`demo_video`) folder
 ## Approach
 
 This application uses the file system to store task data. Each task submission from the user creates a new text file (`enteredtasktitle.txt`) inside the `tasks` folder. The content of the file is the entered task description. When a task is deleted, its corresponding text file is removed from the `tasks` folder.
